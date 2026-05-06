@@ -28,16 +28,6 @@ The core of concurrency safety is this single atomic SQL operation:
 sqlUPDATE counter SET value = value + 1 WHERE id = 1;
 Instead of read → modify → write (which causes race conditions), this operation happens entirely inside the database engine which handles concurrent access internally. The database queues simultaneous requests and processes each one safely — guaranteeing no lost updates even under 1000 simultaneous requests.
 
-How to Run
-Make sure Docker Desktop is installed and running.
-Clone the repository:
-git clone https://github.com/YOURUSERNAME/counter-app.git
-Navigate into the folder:
-cd counter-app
-Build and run all containers:
-docker-compose up --build
-Open browser and go to:
-http://localhost:80
 
 API Documentation
 GET /counter
