@@ -23,7 +23,7 @@ app.post('/increment', async (req, res) => {
   );
   await connection.end();
   res.json({ value: result[0].value });
-});
+}); 
 
 app.get('/counter', async (req, res) => {
   const connection = await mysql.createConnection(dbConfig);
